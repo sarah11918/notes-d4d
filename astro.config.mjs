@@ -6,6 +6,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'My Docs',
+      customCss: ['/src/styles/feelback.css',],
       social: {
         github: 'https://github.com/withastro/starlight',
       },

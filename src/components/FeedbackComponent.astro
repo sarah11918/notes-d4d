@@ -1,0 +1,56 @@
+---
+import FeelbackSplitTaggedMessage from "astro-feelback/components/FeelbackSplitTaggedMessage.astro";
+import "../styles/feelback.css";
+import type { FeelbackValueDefinition } from "astro-feelback";
+
+
+const CONTENT_SET_ID = "5d452306-c7cb-4ae7-8f7b-f815bc02f19f";
+
+const YES_TAGS: FeelbackValueDefinition[] = [
+    { value: "clear", title: "Easy to understand", description: "Easy to follow and comprehend.", },
+    { value: "found-answer", title: "Answered my question", description: "Gave me the information I was looking for.", },
+    { value: "unstuck", title: "Fixed my problem", description: "Helped me resolve an issue.", },
+    { value: "accurate", title: "Accurate", description: "Accurately describes the feature or concept.", },
+    { value: "yes-other", title: "Another reason" },
+];
+
+const NO_TAGS: FeelbackValueDefinition[] = [
+    { value: "unclear", title: "Hard to understand", description: "Too complicated or unclear.", },    
+    { value: "inaccurate", title: "Inaccurate", description: "Doesn't accurately describe the product or feature.", },
+    { value: "missing-info", title: "Couldn't find what I was looking for", description: "Missing important information.", },
+    { value: "bad-examples", title: "Code samples errors", description: "One or more code samples are incorrect.", },
+    { value: "no-other", title: "Another reason" },
+];
+---
+<style is:global>
+    /* .feelback-icon svg {
+      width: 24px;
+      height: 24px;
+    }
+    .feelback-q {
+        
+        border: 2px solid black;
+        background-color:rgb(212, 244, 244);
+    }
+    .feelback-container {
+        background-color:darkkhaki;
+        width: 40vw;
+    }
+    .feelback-radio-item-wrap {
+        background-color:hotpink;
+    } */
+
+ </style>
+
+<FeelbackSplitTaggedMessage
+    contentSetId={CONTENT_SET_ID}
+    withMessage
+    tags={{
+        y: YES_TAGS,
+        n: NO_TAGS
+    }}
+    titles={{
+        y: "What did you like?",
+        n: "What we should improve?",
+    }}
+/>
